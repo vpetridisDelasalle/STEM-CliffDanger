@@ -45,4 +45,13 @@ void loop() {
     // γυρνάμε το μοτέρ 1/100 στροφές.
     myStepper.step(stepsPerRevolution / 100);
   }
+ //εδώ φτιάχνουμε μία συνάρτηση για να μετράμε το νερό που πέφτει στον βράχο.
+ //Ρίχνουμε γενικά νερό πάνω στην κατασκευή και το μετράμε με ένα ογκομετρικό δοχείο στα πλάγια του γκρεμού.
+ //Όταν δεν μετράμε την ταχύτητα του σεισμού, τότε μπορούμε να μετράμε το ύψος του νερού που είναι ικανό να ρίξει τον βράχο
+ //από το μοντέλο μας.
+ void waterSensor(){
+ int sensor=analogRead(A1); // Incoming analog signal read and appointed sensor
+Serial.println(sensor);   //Wrote serial port
+ return sensor;
+ }
 }
